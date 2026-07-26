@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Add Student</title>
 </head>
@@ -8,26 +9,76 @@
 
 <h1>Add Student</h1>
 
+<% if (errors.length > 0) { %>
+
+<div style="color:red;">
+
+    <ul>
+
+        <% errors.forEach(error => { %>
+
+            <li><%= error.msg %></li>
+
+        <% }) %>
+
+    </ul>
+
+</div>
+
+<% } %>
+
 <form action="/students" method="POST">
 
     <label>Name:</label>
-    <input type="text" name="name">
+    <input
+        type="text"
+        name="name"
+        value="<%= student.name || '' %>">
     <br><br>
 
     <label>Email:</label>
-    <input type="email" name="email">
+    <input
+        type="email"
+        name="email"
+        value="<%= student.email || '' %>">
     <br><br>
 
-    <label>Course:</label>
-    <input type="text" name="course">
+   <label>Course:</label>
+
+<select name="course">
+
+    <option value="">Select Course</option>
+
+    <option value="CSE"
+    <%= student.course === "CSE" ? "selected" : "" %>>
+        CSE
+    </option>
+
+    <option value="ECE"
+    <%= student.course === "ECE" ? "selected" : "" %>>
+        ECE
+    </option>
+
+    <option value="ME"
+    <%= student.course === "ME" ? "selected" : "" %>>
+        ME
+    </option>
+
+    <option value="CE"
+    <%= student.course === "CE" ? "selected" : "" %>>
+        CE
+    </option>
+
+</select>
     <br><br>
 
     <label>Semester:</label>
-    <input 
-    type="number" 
-    name="semester"
-    min="1"
-    max="8">
+    <input
+        type="number"
+        name="semester"
+        min="1"
+        max="8"
+        value="<%= student.semester || '' %>">
     <br><br>
 
     <button type="submit">

@@ -5,23 +5,37 @@
     <title>Edit Student</title>
 </head>
 
-
 <body>
-
 
 <h1>Edit Student</h1>
 
+<% if (errors.length > 0) { %>
 
-<form 
+<div style="color:red;">
+
+    <ul>
+
+        <% errors.forEach(error => { %>
+
+            <li><%= error.msg %></li>
+
+        <% }) %>
+
+    </ul>
+
+</div>
+
+<% } %>
+
+<form
     action="/students/<%= student.id %>?_method=PUT"
     method="POST">
-
 
     <label>
         Name:
     </label>
 
-    <input 
+    <input
         type="text"
         name="name"
         value="<%= student.name %>"
@@ -29,13 +43,11 @@
 
     <br><br>
 
-
-
     <label>
         Email:
     </label>
 
-    <input 
+    <input
         type="email"
         name="email"
         value="<%= student.email %>"
@@ -43,27 +55,40 @@
 
     <br><br>
 
+    
 
+   <label>Course:</label>
 
-    <label>
-        Course:
-    </label>
+<select name="course">
 
-    <input 
-        type="text"
-        name="course"
-        value="<%= student.course %>"
-        required>
+    <option value="CSE"
+    <%= student.course === "CSE" ? "selected" : "" %>>
+        CSE
+    </option>
 
+    <option value="ECE"
+    <%= student.course === "ECE" ? "selected" : "" %>>
+        ECE
+    </option>
+
+    <option value="ME"
+    <%= student.course === "ME" ? "selected" : "" %>>
+        ME
+    </option>
+
+    <option value="CE"
+    <%= student.course === "CE" ? "selected" : "" %>>
+        CE
+    </option>
+
+</select>
     <br><br>
-
-
 
     <label>
         Semester:
     </label>
 
-    <input 
+    <input
         type="number"
         name="semester"
         min="1"
@@ -73,22 +98,17 @@
 
     <br><br>
 
-
-
     <button type="submit">
         Update Student
     </button>
 
-
 </form>
-
 
 <br>
 
 <a href="/students">
     Back to Students
 </a>
-
 
 </body>
 
