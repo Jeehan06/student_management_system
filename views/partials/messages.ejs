@@ -1,0 +1,20 @@
+<% if (success && success.length > 0) { %>
+
+<div style="color: green;">
+    <% success.forEach(message => { %>
+        <p><%= message %></p>
+    <% }) %>
+</div>
+
+<% } %>
+
+
+<% if (error && error.length > 0) { %>
+
+<div style="color: red;">
+    <% error.forEach(message => { %>
+        <p><%= message %></p>
+    <% }) %>
+</div>
+
+<% } %>
