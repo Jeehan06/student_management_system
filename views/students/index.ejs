@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Records</title>
+</head>
+
+<body>
+
+<h1>Student Records</h1>
+
+<% if(students.length === 0) { %>
+
+    <p>No students found.</p>
+
+<% } else { %>
+
+    <ul>
+
+    <% students.forEach(student => { %>
+
+        <li>
+            <%= student.name %> -
+            <%= student.course %>
+        </li>
+
+    <% }) %>
+
+    </ul>
+
+<% } %>
+
+</body>
+</html>

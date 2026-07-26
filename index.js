@@ -1,9 +1,14 @@
 const express = require("express");
 const sequelize = require("./config/database");
-
 require("./models/Student");
+const studentRoutes = require("./routes/students");
+
+
 
 const app = express();
+app.set("view engine", "ejs");
+app.use("/students", studentRoutes);
+
 const PORT = 3000;
 
 app.get("/", (req, res) => {
