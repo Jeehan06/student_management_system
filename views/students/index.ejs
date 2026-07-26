@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Student Records</title>
 </head>
@@ -8,26 +9,78 @@
 
 <h1>Student Records</h1>
 
+<a href="/students/new">
+    Add New Student
+</a>
+
+<hr>
+
+
 <% if(students.length === 0) { %>
 
     <p>No students found.</p>
 
+
 <% } else { %>
+
 
     <ul>
 
     <% students.forEach(student => { %>
 
         <li>
-            <%= student.name %> -
-            <%= student.course %>
+
+            <h3>
+                <%= student.name %>
+            </h3>
+
+
+            <p>
+                Email: <%= student.email %>
+            </p>
+
+
+            <p>
+                Course: <%= student.course %>
+            </p>
+
+
+            <p>
+                Semester: <%= student.semester %>
+            </p>
+
+
+            <a href="/students/<%= student.id %>/edit">
+                Edit
+            </a>
+
+
+            <form 
+                action="/students/<%= student.id %>?_method=DELETE"
+                method="POST"
+                style="display:inline;">
+
+                <button type="submit">
+                    Delete
+                </button>
+
+            </form>
+
+
         </li>
+
+        <hr>
+
 
     <% }) %>
 
+
     </ul>
+
 
 <% } %>
 
+
 </body>
+
 </html>
