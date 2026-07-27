@@ -17,8 +17,8 @@ const studentValidation = [
     .withMessage("Please enter a valid email address"),
 
   body("course")
-  .isIn(["CSE", "ECE", "ME", "CE"])
-  .withMessage("Please select a valid course"),
+    .isIn(["CSE", "ECE", "ME", "CE"])
+    .withMessage("Please select a valid course"),
 
   body("semester")
     .isInt({ min: 1, max: 8 })
@@ -35,18 +35,51 @@ router.get("/new", (req, res) => {
 
 // Show all students
 router.get("/", async (req, res) => {
+
   try {
+
     const students = await Student.findAll();
-    res.render("students/index", { students });
+
+    // Dashboard Statistics
+    const totalStudents = students.length;
+
+    const cseCount = students.filter(
+      student => student.course === "CSE"
+    ).length;
+
+    const eceCount = students.filter(
+      student => student.course === "ECE"
+    ).length;
+
+    const meCount = students.filter(
+      student => student.course === "ME"
+    ).length;
+
+    const ceCount = students.filter(
+      student => student.course === "CE"
+    ).length;
+
+    res.render("students/index", {
+      students,
+      totalStudents,
+      cseCount,
+      eceCount,
+      meCount,
+      ceCount,
+    });
 
   } catch (error) {
+
     console.error(error);
     res.status(500).send("Server Error");
+
   }
+
 });
 
 // Show edit student form
 router.get("/:id/edit", async (req, res) => {
+
   try {
 
     const student = await Student.findByPk(req.params.id);
@@ -68,6 +101,7 @@ router.get("/:id/edit", async (req, res) => {
     res.redirect("/students");
 
   }
+
 });
 
 // Create student

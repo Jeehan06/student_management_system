@@ -1,0 +1,190 @@
+/* ===========================
+   GENERAL
+=========================== */
+
+body {
+    background: linear-gradient(135deg, #d59bf1 0%, #f8fafc 100%);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    color: #374151;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+    color: white;
+    padding: 30px 35px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(79, 70, 229, .25);
+}
+
+.hero h1 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    margin: 0;
+    opacity: .9;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+.card {
+    border: none;
+    border-radius: 18px;
+    transition: .25s ease;
+}
+
+.card:hover{
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+.dashboard-card {
+    cursor: default;
+}
+
+.dashboard-card h6 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dashboard-card h2 {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+
+#searchInput{
+
+    background:white;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px 20px;
+
+    font-size:1rem;
+
+    box-shadow:0 10px 25px rgba(79,70,229,.08);
+
+}
+#searchInput:focus {
+    box-shadow: 0 0 0 .25rem rgba(79,70,229,.25);
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead {
+    background: #4338ca;
+    color: white;
+}
+
+.table thead th {
+    border: none;
+}
+
+.table tbody tr {
+    transition: .2s;
+}
+
+.table-hover tbody tr:hover {
+    background: #eef4ff;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn {
+    border-radius: 10px;
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+    border-color: #4338ca;
+}
+
+.btn-warning {
+    color: white;
+}
+
+/* ===========================
+   BADGES
+=========================== */
+
+.badge {
+    padding: .6em .9em;
+    font-size: .8rem;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+.hero{
+    text-align:center;
+}
+
+.hero .btn{
+    margin-top:20px;
+}
+
+}
+
+/* ===========================
+   GRADIENT DASHBOARD CARDS
+=========================== */
+
+.gradient-total{
+    background:linear-gradient(135deg,#1f2937,#4b5563);
+}
+
+.gradient-cse{
+    background:linear-gradient(135deg,#4f46e5,#2563eb);
+}
+
+.gradient-ece{
+    background:linear-gradient(135deg,#10b981,#14b8a6);
+}
+
+.gradient-me{
+    background:linear-gradient(135deg,#fbbf24,#f59e0b);
+}
+
+.gradient-ce{
+    background:linear-gradient(135deg,#ef4444,#ec4899);
+}
