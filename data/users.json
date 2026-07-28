@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "username": "peter parker",
+    "password": "$2b$10$LWvbJnEUbnDYdA1vZU58jubG/akEqEsuUVFaVUlnOpwcdX4RhQLZ6",
+    "role": "user"
+  },
+  {
+    "id": 2,
+    "username": "toby maguire",
+    "password": "$2b$10$fPA2DiYE/in9UqvhdsgHZOCvYWuCPcEer7koHxMkeedjskXUaRkhu",
+    "role": "user"
+  },
+  {
+    "id": 3,
+    "username": "jack d riper",
+    "password": "$2b$10$ybe0HahDbi2CaEGT9Zc1GebDTv4whl9.yd5U2u9eq445X7irTJze."
+  }
+]
