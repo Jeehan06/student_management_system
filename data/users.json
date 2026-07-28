@@ -15,5 +15,15 @@
     "id": 3,
     "username": "jack d riper",
     "password": "$2b$10$ybe0HahDbi2CaEGT9Zc1GebDTv4whl9.yd5U2u9eq445X7irTJze."
+  },
+  {
+    "id": 4,
+    "username": "adam eve",
+    "password": "$2b$10$TmknJKNcQXTDJhztDJIItOOpj0dB2s06E94qff4jQ5EUuDmyUvCa."
+  },
+  {
+    "id": 5,
+    "username": "jeeshan",
+    "password": "$2b$10$Cfs5fmmXEaNNqVMZGsqQL.rQ.EtA7M38KIfhe1O4sVV/KYAiAOmNS"
   }
 ]

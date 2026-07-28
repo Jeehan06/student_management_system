@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Student = require("../models/Student");
+const authenticateToken = require("../middleware/auth");
 const { body, validationResult } = require("express-validator");
 
 // Validation rules
@@ -25,6 +26,33 @@ const studentValidation = [
     .withMessage("Semester must be between 1 and 8"),
 ];
 
+// =============================
+// Protected REST API
+// =============================
+router.get("/api", authenticateToken, async (req, res) => {
+
+  try {
+
+    const students = await Student.findAll();
+
+    res.json({
+      loggedInUser: req.user.username,
+      totalStudents: students.length,
+      students,
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    res.status(500).json({
+      message: "Server Error",
+    });
+
+  }
+
+});
+
 // Show create student form
 router.get("/new", (req, res) => {
   res.render("students/create", {
@@ -40,7 +68,6 @@ router.get("/", async (req, res) => {
 
     const students = await Student.findAll();
 
-    // Dashboard Statistics
     const totalStudents = students.length;
 
     const cseCount = students.filter(
