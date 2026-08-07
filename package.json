@@ -1,13 +1,15 @@
 {
-  "name": "student_record_system",
+  "name": "week05-student-record-system",
   "version": "1.0.0",
-  "description": "",
+  "description": "Student Record Management System built with Node.js, Express, PostgreSQL, Sequelize ORM, JWT Authentication, and EJS.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "type": "commonjs",
+  "author": "Jeeshan",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "connect-flash": "^0.1.1",
